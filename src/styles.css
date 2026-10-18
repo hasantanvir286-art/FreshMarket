@@ -241,3 +241,6 @@ body{zoom:1.08}
 @media(max-width:560px){.admin-profile-menu{right:-3px}.admin-profile-dialog{padding:19px;border-radius:12px}}
 
 .admin-password-form{display:grid;gap:10px;padding:15px 0 2px;margin-top:5px;border-top:1px solid #eef1ed}.admin-password-form h3{margin:0 0 2px;color:#263b2e;font:700 15px Manrope,sans-serif}.admin-password-form label{display:grid;gap:5px;color:#54645a;font-size:12px;font-weight:700}.admin-password-form input{box-sizing:border-box;width:100%;height:40px;padding:0 11px;border:1px solid #dfe7de;border-radius:7px;background:#fff;color:#263b2e;font:400 14px 'DM Sans',sans-serif;outline-color:#168653}.admin-password-form input:focus{border-color:#168653;box-shadow:0 0 0 3px #1686531c}.admin-password-form .account-message,.admin-password-form .checkout-error{margin:0;font-size:12px}.admin-password-form .btn{min-height:40px;margin-top:2px}
+
+.head-actions .orders-shortcut{min-width:54px}.head-actions .orders-shortcut small{font-size:11.6px;color:#657169;margin-top:3px}.orders-shortcut:hover{color:#168653}
+@media(max-width:720px){.head-actions .orders-shortcut{display:none}}
