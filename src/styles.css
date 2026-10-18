@@ -163,3 +163,29 @@ body{zoom:1.08}
 
 .account-card.signed-in{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable}.account-card.signed-in .account-orders{flex:0 0 auto;min-height:0;overflow:visible}.account-card.signed-in .account-orders-heading,.account-card.signed-in .order-filter-tabs{position:static}
 
+
+/* Centered, polished staff sign-in screen. */
+.admin-login-screen{min-height:100vh;min-height:100dvh;width:100%;display:grid;place-items:center;padding:32px 20px;background:radial-gradient(ellipse at 50% 0%,#e6f2e4 0%,#f5f8f4 48%,#eef3ed 100%)}
+.staff-login{width:min(100%,480px);max-width:480px;padding:34px 38px 26px;border:1px solid #e2ebe0;border-radius:18px;box-shadow:0 22px 65px #153b2515;background:#fff}
+.staff-login-brand{display:inline-flex;align-items:center;gap:11px;color:#193829;text-decoration:none}
+.staff-login-brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#eaf4e8;color:#168653}
+.staff-login-brand>span:last-child{display:grid;gap:2px}
+.staff-login-brand b{font:800 18px Manrope,sans-serif;letter-spacing:-.35px}
+.staff-login-brand small{font-size:9px;font-weight:800;letter-spacing:1.7px;color:#87958a}
+.staff-login-intro{display:grid;justify-items:center;text-align:center;margin:30px 0 25px}
+.staff-login-shield{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:#edf6eb;color:#168653}
+.staff-login-intro p{margin:17px 0 6px;color:#168653;font-size:10px;font-weight:800;letter-spacing:1.6px}
+.staff-login-intro h1{margin:0;color:#193829;font:800 28px Manrope,sans-serif;letter-spacing:-.9px}
+.staff-login-intro>small{margin-top:7px;color:#7d8a80;font-size:13px}
+.staff-login form{display:grid;gap:16px}
+.staff-login form>label{display:grid;gap:7px;color:#425449;font-size:13px;font-weight:700}
+.staff-login form>label input{box-sizing:border-box;width:100%;height:48px;padding:0 14px;border:1px solid #dfe7de;border-radius:8px;background:#fff;color:#24382b;font:400 15px 'DM Sans',sans-serif;outline:none;transition:border-color .15s,box-shadow .15s}
+.staff-login form>label input:focus{border-color:#168653;box-shadow:0 0 0 3px #1686531c}
+.staff-login form>label input::placeholder{color:#a0aaa2}
+.staff-login-actions{display:grid;gap:12px;margin-top:3px}
+.staff-login-actions>.btn{width:100%;height:48px;justify-content:center;gap:9px;border-radius:8px;font-size:14px}
+.staff-login-back{justify-self:center;border:0;background:transparent;color:#647269;font:600 13px 'DM Sans',sans-serif;padding:4px 10px;cursor:pointer}
+.staff-login-back:hover{color:#168653}
+.staff-login-footnote{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:24px;padding-top:17px;border-top:1px solid #edf1ec;color:#839087;font-size:11px}
+.staff-login-footnote svg{color:#168653}
+@media(max-width:520px){.admin-login-screen{padding:18px 14px}.staff-login{padding:27px 22px 22px;border-radius:15px}.staff-login-intro{margin:25px 0 22px}.staff-login-intro h1{font-size:25px}}
