@@ -244,3 +244,18 @@ body{zoom:1.08}
 
 .head-actions .orders-shortcut{min-width:54px}.head-actions .orders-shortcut small{font-size:11.6px;color:#657169;margin-top:3px}.orders-shortcut:hover{color:#168653}
 @media(max-width:720px){.head-actions .orders-shortcut{display:none}}
+
+/* Keep the sign-in card focused and comfortable without shrinking signed-in account pages. */
+.account-card:not(.signed-in){box-sizing:border-box;width:min(470px,calc(100vw - 40px));max-width:none;max-height:min(90vh,760px);padding:30px 32px;border:1px solid #e8eee6;border-radius:18px;box-shadow:0 28px 90px #071c1240}
+.account-card:not(.signed-in) .checkout-header{padding-bottom:19px}
+.account-card:not(.signed-in) .checkout-header small{font-size:12px;letter-spacing:1.5px}
+.account-card:not(.signed-in) .checkout-header h2{font-size:25px;letter-spacing:-.5px}
+.account-card:not(.signed-in) .account-tabs{gap:2px;margin:9px 0 13px}
+.account-card:not(.signed-in) .account-tabs button{padding:11px 14px;font-size:15px}
+.account-card:not(.signed-in) .checkout-form{gap:13px}
+.account-card:not(.signed-in) .checkout-form label{gap:6px;font-size:14px}
+.account-card:not(.signed-in) .checkout-form input{height:44px;padding:0 12px;border-radius:8px;font-size:16px;transition:border-color .15s,box-shadow .15s}
+.account-card:not(.signed-in) .checkout-form input:focus{border-color:#168653;box-shadow:0 0 0 3px #16865318}
+.account-card:not(.signed-in) .checkout-form .btn{min-height:46px;border-radius:9px;font-size:15px}
+.account-card:not(.signed-in) .account-note{font-size:13px;line-height:1.5}
+@media(max-width:720px){.account-card:not(.signed-in){align-self:center;width:min(470px,calc(100vw - 28px));max-height:calc(100dvh - 28px);margin:auto;padding:24px 20px;border-radius:16px}.account-card:not(.signed-in) .checkout-header h2{font-size:23px}}
