@@ -1,0 +1,5 @@
+[functions.aamarpay-return]
+verify_jwt = false
+
+[functions.aamarpay-create-payment]
+verify_jwt = false
