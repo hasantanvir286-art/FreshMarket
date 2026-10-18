@@ -189,3 +189,5 @@ body{zoom:1.08}
 .staff-login-footnote{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:24px;padding-top:17px;border-top:1px solid #edf1ec;color:#839087;font-size:11px}
 .staff-login-footnote svg{color:#168653}
 @media(max-width:520px){.admin-login-screen{padding:18px 14px}.staff-login{padding:27px 22px 22px;border-radius:15px}.staff-login-intro{margin:25px 0 22px}.staff-login-intro h1{font-size:25px}}
+
+.head-actions .account{max-width:150px}.head-actions .account small{display:block;max-width:124px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
