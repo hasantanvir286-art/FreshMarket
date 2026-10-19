@@ -3,9 +3,9 @@
 -- Confirm quantities and prices against your actual inventory before accepting orders.
 with category_seed(name,slug,display_order) as (values
  ('Fruits','fruits',1),('Vegetables','vegetables',2),('Meat & Seafood','meat-seafood',3),
- ('Dairy & Eggs','dairy-eggs',4),('Bakery','bakery',5),('Beverages','beverages',6),
- ('Snacks','snacks',7),('Household','household',8),('Rice & Grains','rice-grains',9),
- ('Lentils & Pulses','lentils-pulses',10),('Spices & Essentials','spices-essentials',11)
+ ('Frozen Foods','frozen-foods',4),('Dairy & Eggs','dairy-eggs',5),('Bakery','bakery',6),('Beverages','beverages',7),
+ ('Snacks','snacks',8),('Household','household',9),('Rice & Grains','rice-grains',10),
+ ('Lentils & Pulses','lentils-pulses',11),('Spices & Essentials','spices-essentials',12)
 ), upserted_categories as (
  insert into public.categories(name,slug,display_order,active,featured)
  select name,slug,display_order,true,true from category_seed
@@ -38,7 +38,7 @@ with category_seed(name,slug,display_order) as (values
  ('Dairy & Eggs','Plain Yogurt (Doi)','bd-yogurt','FM-BD-024','500 g',90,180,false,'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=680&q=82'),
  ('Dairy & Eggs','Butter','bd-butter','FM-BD-025','200 g',220,140,false,'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=680&q=82'),
  ('Bakery','White Bread','bd-white-bread','FM-BD-026','1 loaf',65,180,false,'https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=680&q=82'),
- ('Bakery','Frozen Paratha','bd-paratha','FM-BD-027','20 pcs',240,120,false,'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=680&q=82'),
+ ('Frozen Foods','Frozen Paratha','bd-paratha','FM-BD-027','20 pcs',240,120,false,'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=680&q=82'),
  ('Rice & Grains','Miniket Rice','bd-miniket-rice','FM-BD-028','1 kg',78,900,true,'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=680&q=82'),
  ('Rice & Grains','Najirshail Rice','bd-najirshail-rice','FM-BD-029','1 kg',85,650,false,'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=680&q=82'),
  ('Rice & Grains','Chinigura Aromatic Rice','bd-chinigura-rice','FM-BD-030','1 kg',145,280,false,'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=680&q=82'),

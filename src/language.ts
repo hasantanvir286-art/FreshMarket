@@ -1,7 +1,7 @@
 export type Language = 'en' | 'bn';
 
 const bn: Record<string, string> = {
-  'FRESHNESS, DELIVERED': 'সতেজতা পৌঁছে যাবে আপনার দরজায়', 'Good food.': 'ভালো খাবার।', 'Good mood.': 'ভালো মন।', 'Every day.': 'প্রতিদিন।',
+  'Frozen Foods': 'হিমায়িত খাবার', 'FROZEN FOODS': 'হিমায়িত খাবার', 'FRESHNESS, DELIVERED': 'সতেজতা পৌঁছে যাবে আপনার দরজায়', 'Good food.': 'ভালো খাবার।', 'Good mood.': 'ভালো মন।', 'Every day.': 'প্রতিদিন।',
   'Farm-fresh produce and everyday favorites, delivered to homes across Bangladesh.': 'খামারের তাজা পণ্য ও নিত্যপ্রয়োজনীয় পছন্দের জিনিস সারা বাংলাদেশে পৌঁছে দিই।',
   'Shop fresh today': 'আজই তাজা পণ্য কিনুন', 'Explore this week’s deals': 'এই সপ্তাহের অফার দেখুন', 'Always fresh': 'সবসময় সতেজ', 'Fast delivery': 'দ্রুত ডেলিভারি', 'Goodness guaranteed': 'মানের নিশ্চয়তা',
   'Picked fresh': 'তাজা বেছে নেওয়া', 'for you': 'আপনার জন্য', 'From local farms': 'স্থানীয় খামার থেকে', 'Good things grow nearby': 'ভালো পণ্য কাছেই উৎপাদিত হয়',

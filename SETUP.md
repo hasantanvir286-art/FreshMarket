@@ -25,6 +25,10 @@ The storefront accepts delivery addresses across Bangladesh. Checkout asks for t
 
 To allow consecutive orders from the same customer, run `supabase/migrations/202610190001_allow_consecutive_orders.sql` in Supabase SQL Editor. It removes the 15-minute contact-based block while retaining protection against retrying the same checkout request. Add IP rate limiting or CAPTCHA before public launch to reduce checkout spam.
 
+## Frozen foods category
+
+The storefront navigation and category browser include **Frozen Foods**. Run `supabase/migrations/202610190004_add_frozen_foods_category.sql` in Supabase SQL Editor to create the live category and move the existing Frozen Paratha catalog item into it without changing its price or stock. Add other frozen products from **Admin → Products** and select **Frozen Foods**; prices and inventory should match your actual supplier and stock.
+
 ## Customer accounts
 
 Customers create accounts with their full name, email address, mobile number, and password. Supabase verifies the email address by sending a confirmation link; customers sign in with email and password after confirming. The mobile number is required and saved to the customer profile for contact and delivery, but is not used for SMS verification or login. Customer profiles are created automatically, and signed-in orders are linked to the account.
