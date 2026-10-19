@@ -59,7 +59,7 @@ upserted_products as (
  insert into public.products(category_id,name,slug,sku,unit,price_cents,stock,status,featured,bestseller,demo_data,image_url,short_description)
  select c.id,v.name,v.slug,v.sku,v.unit,v.price_tk*100,v.stock,'active',v.featured,false,false,v.image_url,'Bangladesh grocery item · price in BDT'
  from catalog v join upserted_categories c on c.name=v.category_slug
- on conflict(slug) do update set status='active',demo_data=false
+ on conflict(slug) do update set demo_data=false
  returning id
 )
 select count(*) as active_real_bd_products from upserted_products;
