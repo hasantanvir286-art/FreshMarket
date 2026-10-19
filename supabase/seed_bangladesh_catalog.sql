@@ -9,7 +9,7 @@ with category_seed(name,slug,display_order) as (values
 ), upserted_categories as (
  insert into public.categories(name,slug,display_order,active,featured)
  select name,slug,display_order,true,true from category_seed
- on conflict(slug) do update set active=true
+ on conflict(slug) do update set name=excluded.name,display_order=excluded.display_order
  returning id,name
 ), catalog(category_slug,name,slug,sku,unit,price_tk,stock,featured,image_url) as (values
  ('Fruits','Bananas','bd-bananas','FM-BD-001','1 dozen',120,300,true,'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=680&q=82'),

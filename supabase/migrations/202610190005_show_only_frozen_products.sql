@@ -1,6 +1,6 @@
 -- Hide every non-frozen real catalog product from the customer storefront.
 -- Staff can restore any product from Admin -> Products using its Show action.
--- No product, order, price, or stock data is deleted or changed.
+-- Other categories and products are hidden, not deleted; prices and stock are preserved.
 do $$
 declare
   frozen_category_id uuid;
@@ -9,6 +9,10 @@ begin
   if frozen_category_id is null then
     raise exception 'Frozen Foods category is missing. Run migration 202610190004_add_frozen_foods_category.sql first.';
   end if;
+
+  update public.categories c
+  set active=(c.id=frozen_category_id),updated_at=now()
+  where c.active is distinct from (c.id=frozen_category_id);
 
   update public.products p
   set status='archived',updated_at=now()
