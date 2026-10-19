@@ -27,7 +27,13 @@ To allow consecutive orders from the same customer, run `supabase/migrations/202
 
 ## Customer accounts
 
-Customers use the **Account** button in the storefront to create an account or sign in with email and password. When Supabase email confirmation is enabled, the customer must confirm the signup email before signing in. Profiles are created automatically. Cash-on-delivery orders placed while signed in are linked to that account and appear in its order history; prior guest orders remain guest orders.
+Customers use the **Account** button to create an account with a Bangladesh mobile number and password. Signup sends a six-digit SMS code; the mobile number is the login ID. Existing email/password accounts can continue signing in with their email. Profiles are created automatically. Signed-in orders are linked to the account, and verified-phone accounts can claim matching guest orders and review delivered products after applying migration 202610190002.
+
+### Enable customer mobile verification
+
+SMS verification requires a configured SMS provider; Supabase does not send production SMS until this is set up. In Supabase Dashboard, open **Authentication → Sign In / Providers → Phone**, enable phone authentication and phone confirmation, and configure a supported SMS provider (such as Twilio) with its credentials and message template. Check the provider's Bangladesh delivery coverage and rates. Set sensible SMS rate limits and enable CAPTCHA before public launch to reduce abuse. New customers enter their number in local `01XXXXXXXXX` or international `+8801XXXXXXXXX` format; the app normalizes it to E.164 before sending.
+
+After enabling the provider, run `supabase/migrations/202610190002_phone_verified_customer_accounts.sql` in Supabase SQL Editor after migrations 007, 009, 010, 180003, and 190001. It updates secure order, review, and customer-directory functions, and allows checkout without an email. Existing email-based users do not need to recreate their accounts.
 
 ## Enable product management in Admin
 

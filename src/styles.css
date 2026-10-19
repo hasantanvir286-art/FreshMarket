@@ -259,3 +259,10 @@ body{zoom:1.08}
 .account-card:not(.signed-in) .checkout-form .btn{min-height:46px;border-radius:9px;font-size:15px}
 .account-card:not(.signed-in) .account-note{font-size:13px;line-height:1.5}
 @media(max-width:720px){.account-card:not(.signed-in){align-self:center;width:min(470px,calc(100vw - 28px));max-height:calc(100dvh - 28px);margin:auto;padding:24px 20px;border-radius:16px}.account-card:not(.signed-in) .checkout-header h2{font-size:23px}}
+.phone-field-note{color:#78867c;font-size:12px;font-weight:500;line-height:1.45}
+.phone-verification-form{padding-top:18px}
+.phone-verify-intro{display:flex;align-items:center;gap:12px;margin-bottom:4px;padding:14px;border:1px solid #e2eee0;border-radius:10px;background:linear-gradient(120deg,#f1f8ee,#fbfdf9)}
+.phone-verify-intro>span{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:50%;background:#e1f0dd;color:#168653}
+.phone-verify-intro>div{display:grid;gap:3px}.phone-verify-intro b{color:#284332;font-size:14px}.phone-verify-intro small{color:#76847a;font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+.phone-verification-form input[name="token"]{font-size:22px;font-weight:700;letter-spacing:8px;text-align:center}
+.phone-resend{justify-self:center;color:#168653;font-weight:700}
