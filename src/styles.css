@@ -346,3 +346,7 @@ body{zoom:1.08}
 .hero-slide-dot.active{width:20px;border-radius:5px;background:#168653}
 @media(max-width:720px){.hero-carousel{width:88%;height:90%}.hero-slide-arrow{width:30px;height:30px}.hero-slide-prev{left:10px}.hero-slide-next{right:10px}.hero-slide-dots{right:17px;bottom:15px}}
 @media(prefers-reduced-motion:reduce){.hero-carousel .hero-img,.hero-slide-arrow,.hero-slide-dot{transition:none}}
+
+/* Keep the farm callout above every hero slide so its card never gets clipped by the photo. */
+.hero-note{z-index:3;background:#fff;border:1px solid #edf1eb;box-shadow:0 12px 32px #17251d24}
+@media(max-width:420px){.hero-note{max-width:calc(100% - 12px);gap:7px;padding:8px 10px}.hero-note small{font-size:11px}.note-arrow{margin-left:5px}}
