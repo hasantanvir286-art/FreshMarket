@@ -27,14 +27,13 @@ To allow consecutive orders from the same customer, run `supabase/migrations/202
 
 ## Customer accounts
 
-Customers use the **Account** button to create an account with a Bangladesh mobile number and password. Signup sends a six-digit SMS code; the mobile number is the login ID. Existing email/password accounts can continue signing in with their email. Profiles are created automatically. Signed-in orders are linked to the account, and verified-phone accounts can claim matching guest orders and review delivered products after applying migration 202610190002.
+Customers create accounts with their full name, email address, mobile number, and password. Supabase verifies the email address by sending a confirmation link; customers sign in with email and password after confirming. The mobile number is required and saved to the customer profile for contact and delivery, but is not used for SMS verification or login. Customer profiles are created automatically, and signed-in orders are linked to the account.
 
-### Enable customer mobile verification
+### Enable customer email verification
 
-SMS verification requires a configured SMS provider; Supabase does not send production SMS until this is set up. In Supabase Dashboard, open **Authentication → Sign In / Providers → Phone**, enable phone authentication and phone confirmation, and configure a supported SMS provider (such as Twilio) with its credentials and message template. Check the provider's Bangladesh delivery coverage and rates. Set sensible SMS rate limits and enable CAPTCHA before public launch to reduce abuse. New customers enter their number in local `01XXXXXXXXX` or international `+8801XXXXXXXXX` format; the app normalizes it to E.164 before sending.
+In Supabase Dashboard, open **Authentication → Sign In / Providers → Email** and make sure email signups are enabled and **Confirm email** is enabled. Supabase sends the confirmation link to the customer's email inbox. For production delivery, configure a trusted SMTP provider under **Authentication → SMTP Settings**; the built-in mail service is rate-limited and intended for testing. No SMS provider or Twilio credentials are needed.
 
-After enabling the provider, run `supabase/migrations/202610190002_phone_verified_customer_accounts.sql` in Supabase SQL Editor after migrations 007, 009, 010, 180003, and 190001. It updates secure order, review, and customer-directory functions, and allows checkout without an email. Existing email-based users do not need to recreate their accounts.
-
+If you previously ran `supabase/migrations/202610190002_phone_verified_customer_accounts.sql`, run `supabase/migrations/202610190003_restore_email_verified_customer_accounts.sql` in Supabase SQL Editor to restore email-verified account order lookup and email-required checkout. If you did not run migration 190002, no SQL change is required for this signup update.
 ## Enable product management in Admin
 
 The `/admin` dashboard requires an active staff account. Create your first customer account from the storefront's **Account → Create account** flow. In Supabase **Authentication → Users**, copy that user's UUID, then run this once in **SQL Editor**, replacing the placeholder to bootstrap the first super admin:
